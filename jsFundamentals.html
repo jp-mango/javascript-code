@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JavaScript Fundamentals Notes</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+			}
+			.topic {
+				margin-bottom: 20px;
+			}
+			.topic h2 {
+				background-color: #f7f7f7;
+				padding: 5px 10px;
+				border-left: 5px solid #007bff;
+			}
+			.code-container {
+				position: relative;
+				background-color: #f7f7f7;
+				padding: 10px;
+				margin: 5px 0;
+				border-left: 5px solid #007bff;
+				border-radius: 5px;
+			}
+			button.copy-btn {
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				padding: 5px 10px;
+				cursor: pointer;
+			}
+		</style>
+		<script>
+			function copyToClipboard(element) {
+				var text = element.previousElementSibling.innerText;
+				var elem = document.createElement('textarea');
+				document.body.appendChild(elem);
+				elem.value = text;
+				elem.select();
+				document.execCommand('copy');
+				document.body.removeChild(elem);
+				alert('Code copied to clipboard');
+			}
+		</script>
+	</head>
+	<body>
+		<div class="topic">
+			<h2>Values and Variables</h2>
+			<p>
+				In JavaScript, values are the most basic units of data. They can be
+				numbers, strings, or boolean values.
+			</p>
+			<p>Variables are containers for storing data values.</p>
+			<code
+				>let age = 30; // Using let<br />
+				const birthYear = 1990; // Using const<br />
+				var job = 'developer'; // Using var (older way, generally replaced by
+				let and const)</code
+			>
+		</div>
+
+		<div class="topic">
+			<h2>Data Types</h2>
+			<p>
+				JavaScript is a dynamically typed language, which means data types are
+				automatically assigned to variables.
+			</p>
+			<p>The basic data types include:</p>
+			<ul>
+				<li>Number: for both floating-point numbers and integers</li>
+				<li>String: for text</li>
+				<li>Boolean: for true/false</li>
+				<li>Undefined: a variable not yet defined</li>
+				<li>Null: a non-existent or invalid value</li>
+				<li>Symbol: unique and cannot be changed</li>
+				<li>Object: for more complex data structures</li>
+			</ul>
+		</div>
+
+		<div class="topic">
+			<h2>let, const, and var</h2>
+			<p>
+				<code>let</code> is used to declare variables that can change later.
+			</p>
+			<p>
+				<code>const</code> is used to declare variables that should not change
+				after their initial assignment.
+			</p>
+			<p>
+				<code>var</code> is the old way of declaring variables and can be
+				function or globally scoped, which is different from
+				<code>let</code> and <code>const</code> that are block-scoped.
+			</p>
+		</div>
+
+		<div class="topic">
+			<h2>Basic Operators</h2>
+			<p>Operators are used to perform operations on variables and values.</p>
+			<p>
+				Arithmetic operators: <code>+</code>, <code>-</code>, <code>*</code>,
+				<code>/</code>, <code>%</code> (remainder), <code>++</code> (increment),
+				<code>--</code> (decrement)
+			</p>
+			<p>
+				Assignment operators: <code>=</code>, <code>+=</code>, <code>-=</code>,
+				etc.
+			</p>
+			<p>
+				Comparison operators: <code>==</code>, <code>===</code>,
+				<code>!=</code>, <code>!==</code>, <code>&lt;</code>, <code>&gt;</code>,
+				etc.
+			</p>
+			<p>
+				Logical operators: <code>&&</code> (and), <code>||</code> (or),
+				<code>!</code> (not)
+			</p>
+		</div>
+
+		<div class="topic">
+			<h2>Strings and Template Literals</h2>
+			<p>
+				Strings can be created using single quotes, double quotes, or backticks.
+			</p>
+			<p>
+				Template literals are enclosed by backticks and can contain placeholders
+				for embedding expressions.
+			</p>
+			<code
+				>let firstName = 'John';<br />
+				let greeting = `Hello, ${firstName}!`;
+			</code>
+		</div>
+
+		<div class="topic">
+			<h2>Taking Decisions: if / else Statements</h2>
+			<p>
+				The <code>if...else</code> statement is used to perform different
+				actions based on different conditions.
+			</p>
+			<code>
+				if (age &gt;= 18) { console.log('You can vote.');<br />
+				} else {<br />
+				console.log('You are too young to vote.'); <br />}
+			</code>
+		</div>
+
+		<div class="topic">
+			<h2>Type Conversion and Coercion</h2>
+			<p>
+				Type conversion is when you manually convert from one type to another.
+			</p>
+			<p>
+				Type coercion is when JavaScript automatically converts types behind the
+				scenes.
+			</p>
+			<code>let input = '1991';</code><br />
+			<code>let year = Number(input); // explicit conversion</code><br />
+			<code>console.log(input + 18); // implicit coercion to string</code>
+		</div>
+
+		<div class="topic">
+			<h2>Equality Operators: == vs. ===</h2>
+			<p>
+				<code>==</code> is the loose equality operator and performs type
+				coercion.
+			</p>
+			<p>
+				<code>===</code> is the strict equality operator and does not perform
+				type coercion.
+			</p>
+			<code>
+				console.log('18' == 18); // true because of type coercion<br />
+				console.log('18' === 18); // false because different types
+			</code>
+		</div>
+
+		<div class="topic">
+			<h2>Logical Operators</h2>
+			<p>
+				Logical operators are used to determine the logic between variables or
+				values.
+			</p>
+			<!-- You would typically include more details and examples here -->
+		</div>
+
+		<div class="topic">
+			<h2>The Switch Statement</h2>
+			<p>
+				The switch statement is used to perform different actions based on
+				different conditions.
+			</p>
+			<code>
+				const day = 'tuesday'; <br />
+				switch (day) { <br />
+				&nbsp;&nbsp;case 'monday': <br />
+				&nbsp;&nbsp;&nbsp;&nbsp;console.log(`study`); <br />
+				&nbsp;&nbsp;case ... :<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;... <br />
+				}
+			</code>
+		</div>
+
+		<div class="topic">
+			<h2>The Conditional (Ternary) Operator</h2>
+			<p>
+				The conditional (ternary) operator assigns a value to a variable based
+				on a condition.
+			</p>
+			<code>let age = 26;</code><br />
+			<code>let beverage = (age &gt;= 21) ? 'Beer' : 'Juice';</code><br />
+			<p>
+				This will assign 'Beer' to beverage if age is 21 or over, otherwise
+				'Juice'.
+			</p>
+		</div>
+		<div class="topic">
+			<h2>Functions</h2>
+			<p>Functions are reusable blocks of code that perform a specific task.</p>
+			<code>
+				function greet(name) {<br />
+				&nbsp;&nbsp;console.log('Hello ' + name); <br />}
+			</code>
+			<p>
+				To call a function: <br />
+				<code> greet('Alice');</code>
+			</p>
+		</div>
+
+		<div class="topic">
+			<h2>Function Declarations vs. Expressions</h2>
+			<p>
+				A function declaration defines a function without requiring a variable
+				assignment.
+			</p>
+			<code>
+				function calcAge(birthYear) { <br />
+				&nbsp;&nbsp;return 2023 - birthYear; <br />
+				}
+			</code>
+			<p>A function expression assigns a function to a variable.</p>
+			<code>
+				const calcAge = function(birthYear) {<br />
+				&nbsp;&nbsp;return 2023 - birthYear;<br />
+				}
+			</code>
+		</div>
+
+		<div class="topic">
+			<h2>Arrow Functions</h2>
+			<p>
+				Arrow functions allow for a shorter syntax for writing function
+				expressions.
+			</p>
+			<code>const calcAge = birthYear => 2023 - birthYear;</code>
+			<p>
+				Arrow functions with one parameter do not need parentheses around the
+				parameter list.
+			</p>
+		</div>
+
+		<div class="topic">
+			<h2>Functions Calling Other Functions</h2>
+			<p>A function can call another function to perform a task.</p>
+			<code>
+				function cutFruitPieces(fruit) { return fruit * 4; }<br />
+				function fruitProcessor(apples, oranges) { <br />
+				&nbsp;&nbsp;const applePieces = cutFruitPieces(apples);<br />
+				&nbsp;&nbsp;const orangePieces = cutFruitPieces(oranges);<br />
+				&nbsp;&nbsp;const juice = `Apple juice with ${applePieces} pieces of
+				&nbsp;&nbsp;apple and ${orangePieces} pieces of orange.`;<br />
+				&nbsp;&nbsp;return juice;<br />
+				}
+			</code>
+			<p>Call the function: <code>fruitProcessor(2, 3);</code></p>
+		</div>
+
+		<div class="topic">
+			<h2>Introduction to Arrays</h2>
+			<p>Arrays are used to store multiple values in a single variable.</p>
+			<code>const fruits = ['Apple', 'Banana', 'Cherry'];</code>
+		</div>
+
+		<div class="topic">
+			<h2>Basic Array Operations (Methods)</h2>
+			<p>
+				Arrays have several methods for adding, removing, and manipulating data.
+			</p>
+			<p>
+				To add elements: <code>fruits.push('Orange');</code> (end) or
+				<code>fruits.unshift('Strawberry');</code> (start)
+			</p>
+			<p>
+				To remove elements: <code>fruits.pop();</code> (end) or
+				<code>fruits.shift();</code> (start)
+			</p>
+			<p>To find index of element: <code>fruits.indexOf('Banana');</code></p>
+		</div>
+
+		<div class="topic">
+			<h2>Introduction to Objects</h2>
+			<p>
+				Objects are collections of properties, and a property is an association
+				between a name (or key) and a value.
+			</p>
+			<code
+				>const person = { firstName: 'John', lastName: 'Doe', age: 30 };</code
+			>
+		</div>
+
+		<div class="topic">
+			<h2>Dot vs. Bracket Notation</h2>
+			<p>
+				You can access the properties of an object using dot notation or bracket
+				notation.
+			</p>
+			<code>console.log(person.firstName); // Dot notation</code><br />
+			<code>console.log(person['lastName']); // Bracket notation</code>
+		</div>
+
+		<div class="topic">
+			<h2>Object Methods</h2>
+			<p>
+				Objects can have methods, which are functions associated with the
+				object.
+			</p>
+			<code
+				>const person = { firstName: 'John', lastName: 'Doe', birthYear: 1990,
+				calcAge: function() { return 2023 - this.birthYear; } };</code
+			>
+			<p>Call the method: <code>person.calcAge();</code></p>
+		</div>
+
+		<div class="topic">
+			<h2>Iteration: The for Loop</h2>
+			<p>The for loop repeats a block of code a specified number of times.</p>
+			<code>for (let i = 0; i < 5; i++) { console.log(i); }</code>
+		</div>
+
+		<div class="topic">
+			<h2>Looping Arrays, Breaking and Continuing</h2>
+			<p>
+				You can loop over arrays using for loops, and control the flow with
+				break and continue.
+			</p>
+			<code>const numbers = [1, 2, 3, 4, 5];</code><br />
+			<code
+				>for (let i = 0; i < numbers.length; i++) { if (numbers[i] === 3)
+				continue; // Skip the current iteration if (numbers[i] > 4) break; //
+				Exit the loop console.log(numbers[i]); }</code
+			>
+		</div>
+
+		<div class="topic">
+			<h2>Looping Backwards and Loops in Loops</h2>
+			<p>
+				You can loop through arrays backwards, and even use loops within loops
+				for more complex structures.
+			</p>
+			<code
+				>for (let i = numbers.length - 1; i >= 0; i--) {
+				console.log(numbers[i]); }</code
+			>
+			<p>Nested loops example:</p>
+			<code
+				>for (let i = 0; i < 3; i++) { for (let j = 0; j < 2; j++) {
+				console.log(i, j); } }</code
+			>
+		</div>
+
+		<div class="topic">
+			<h2>The while Loop</h2>
+			<p>
+				The while loop continues to execute a block of code as long as the
+				specified condition is true.
+			</p>
+			<code>let i = 0;</code><br />
+			<code>while (i < numbers.length) { console.log(numbers[i]); i++; }</code>
+		</div>
+
+		<script>
+			// JavaScript examples for the topics below
+
+			// Values and Variables
+			console.log('---Values and Variables---');
+			let age = 30; // Using let
+			const birthYear = 1990; // Using const
+			var job = 'developer'; // Using var
+			console.log(`age: ${age}, birthYear: ${birthYear}, job: ${job}`);
+
+			// Basic Operators
+			console.log('---Basic Operators---');
+			let sum = 10 + 5; // 15
+			let difference = 10 - 5; // 5
+			let product = 10 * 5; // 50
+			let quotient = 10 / 5; // 2
+			console.log(
+				`sum: ${sum}, difference: ${difference}, product: ${product}, quotient: ${quotient}`
+			);
+
+			// Strings and Template Literals
+			console.log('---Strings and Template Literals---');
+			let firstName = 'John';
+			let greeting = `Hello, ${firstName}!`;
+			console.log(greeting);
+
+			// Taking Decisions: if / else Statements
+			console.log('---if / else Statements---');
+			if (age >= 18) {
+				console.log('You can vote.');
+			} else {
+				console.log('You are too young to vote.');
+			}
+
+			// Type Conversion and Coercion
+			console.log('---Type Conversion and Coercion---');
+			let input = '1991';
+			let year = Number(input); // explicit conversion
+			console.log(`Converted string '1991' to number: ${year}`);
+			console.log(
+				`Implicit coercion: '1991' + 18 results in a string: ${input + 18}`
+			);
+
+			// Equality Operators: == vs. ===
+			console.log('---Equality Operators: == vs. ===---');
+			console.log(`'18' == 18: ${'18' == 18}`); // true because of type coercion
+			console.log(`'18' === 18: ${'18' === 18}`); // false because different types
+
+			// Logical Operators
+			console.log('---Logical Operators---');
+			console.log(`true && false: ${true && false}`); // Logical AND
+			console.log(`true || false: ${true || false}`); // Logical OR
+			console.log(`!true: ${!true}`); // Logical NOT
+
+			// The switch Statement
+			console.log('---The switch Statement---');
+			let day = 'Monday';
+			switch (day) {
+				case 'Monday':
+					console.log('It is Monday');
+					break;
+				case 'Tuesday':
+					console.log('It is Tuesday');
+					break;
+				default:
+					console.log('It is another day');
+			}
+
+			// The Conditional (Ternary) Operator
+			console.log('---The Conditional (Ternary) Operator---');
+			let beverage = age >= 21 ? 'Beer' : 'Juice';
+			console.log(`I like to drink ${beverage} because I am ${age} years old.`);
+		</script>
+	</body>
+</html>
