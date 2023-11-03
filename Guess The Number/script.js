@@ -1,7 +1,7 @@
 'use strict';
 
 let secretNumber = getRandomNumber();
-let score = 10;
+let score = 3;
 let highScore = 0;
 
 function updateMessage(message) {
@@ -14,7 +14,7 @@ function updateScore(newScore) {
 }
 
 function getRandomNumber() {
-	return Math.trunc(Math.random() * 10) + 1;
+	return Math.trunc(Math.random() * 3) + 1;
 }
 
 function updateStylesForCorrectGuess() {
@@ -72,7 +72,7 @@ const clickCheck = function () {
 
 const clickAgain = function () {
 	secretNumber = getRandomNumber();
-	updateScore(10);
+	updateScore(3);
 	updateMessage('Start guessing...');
 	resetStyles();
 	document.querySelector('.number').textContent = '?';
